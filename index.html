@@ -4,24 +4,34 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="java.js"></script>
 		<script src="https://cdn.tailwindcss.com"></script>
-		<title>TRPG-helper</title>
 	</head>
 	
 	<body>
+		<!-- 헤더 영역 -->
 		<header>
-			<!-- 헤더 영역 -->
-			<header>
-				<div class="flex flex-col justify-center mt-7 text-center">
-					<div id="logo" class="relative w-48 m-auto shrikhand">
-						<div class="text-2xl title">TRPG</div>
-						<div class="inline-block text-5xl shrikhand"> helper</div>
-					</div>
-					<div id="menu" class="text-xl manjari100 mt-1">how to use /desc css ect</div>
+			<div class="flex flex-col justify-center text-center mt-7">
+				<div id="logo" class="relative w-48 m-auto shrikhand">
+					<div class="text-2xl title grad">TRPG</div>
+					<div class="inline-block text-5xl shrikhand text-slate-700"> helper</div>
 				</div>
-			</header>
-			<!-- //헤더 영역 -->
-			<div class="my-5 border-b-2 border-b-indigo-100"></div>
+				<div id="menu" class="h-8 m-auto mt-3 text-2xl leading-8 text-slate-700">
+					<div class="inline-block px-2 py-0.5 mr-10 bebas menu-space">
+						<a href="#" class="menu-item" data-title="how&nbsp;to&nbsp;use">how&nbsp;to&nbsp;use</a>
+					</div>
+					<div class="inline-block px-2 py-0.5 mr-10 bebas menu-space">
+						<a href="#" class="menu-item" data-title="/desc">/desc</a>
+					</div>
+					<div class="inline-block px-2 py-0.5 mr-10 bebas menu-space">
+						<a href="#" class="menu-item" data-title="css">css</a>
+					</div>
+					<div class="inline-block px-2 py-0.5 mr-10 bebas menu-space">
+							<a href="#" class="menu-item" data-title="etc">etc</a>
+					</div>
+				</div>	
+			</div>
 		</header>
+			<!-- //헤더 영역 -->
+		<div class="my-5 border-b-2 border-b-indigo-100"></div>
 		<main class="suit">
 			<!-- 메인 영역 -->
 			<div class="flex justify-center p-5">
@@ -29,30 +39,38 @@
 				<div class="w-5/12 mr-8 text-center">
 					
 					<!-- 문장 입력 -->
-					<textarea id="input_text" class="w-full p-5 text-sm leading-normal tracking-tighter border border-indigo-200 rounded-sm resize-none text-slate-500 bg-indigo-50 h-400px focus:outline-indigo-300"></textarea>
+					<div class="mb-3">
+						<p class="text-2xl text-left shrikhand text-slate-700">Enter a sentence to convert</p>
+						<p class="text-base leading-none text-left text-slate-400">
+							Please refrain from too long sentences<br/>
+							It also recognizes the punctuation marks in quotation marks.
+						</p>
+					</div>	
+					<textarea id="input_text" class="h-[400px] w-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-indigo-400"></textarea>
 					
 					<!-- 옵션 설정 -->
+					
 					<div class="w-full m-auto text-sm text-left text-slate-500">
 						
 						<!-- 물음표 활성화-->
 						<div class="inline-block ml-1">
 							<label class="chk_box">
 								<input type="checkbox" id='use_question'>
-								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="icon"></span>
 								<span class="text-sm text-slate-500 ml-1.5 mr-4">물음표</span>
 							</label>
 
 							<!-- 느낌표 활성화-->
 							<label class="chk_box">
 								<input type="checkbox" id='use_exclamation'>
-								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="icon"></span>
 								<span class="text-sm text-slate-500 ml-1.5 mr-4">느낌표</span>
 							</label>
 
 							<!-- 쉼표 활성화-->
 							<label class="chk_box">
 								<input type='checkbox' id='use_comma'>
-								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="icon"></span>
 								<span class="text-sm text-slate-500 ml-1.5 mr-4">쉼표</span>
 							</label>
 						</div>
@@ -60,7 +78,7 @@
 
 						<!-- 변환 버튼 -->
 						<div class="inline-block float-right">
-							<button id="convert" class="inline-block px-5 py-1 mr-1 text-white bg-indigo-200 rounded-full hover:bg-indigo-300 md:mx-0">변환</button>
+							<button id="copy_btn" class="inline-block rounded-full w-[80px] h-[35px] btn">변환</button>
 						</div>
 						
 					</div>
@@ -70,10 +88,18 @@
 				<!-- //input 영역 -->	
 				
 				<!-- result 영역 -->
+			
 				<div class="w-5/12 ml-8 text-center">
-					<div id="result" class="p-5 m-auto overflow-y-scroll text-sm leading-normal tracking-tighter text-left border border-indigo-200 rounded-sm text-slate-500 bg-indigo-50 h-400px"></div>
-					<div class=" m-auto text-sm text-slate-500 text-right pt-1.5 align-middle justify-center content-center">
-						<button id="copy_btn" class="inline-block px-5 py-1 text-white bg-indigo-200 rounded-full hover:bg-indigo-300 md:mx-0">복사</button>
+					<div class="mb-3">
+						<p class="text-2xl text-left shrikhand text-slate-700">Result</p>
+						<p class="text-base leading-none text-left text-slate-400">
+							You can copy it by clicking the Copy button.<br/>
+							Please check the page below for a copy of each line.
+						</p>
+					</div>	
+					<div id="result" class="w-full p-5 m-auto overflow-y-scroll text-sm leading-normal tracking-tighter text-left border border-indigo-400 rounded-lg text-slate-500 h-[400px]"></div>
+					<div class="m-auto text-sm text-slate-500 text-right pt-1.5 align-middle justify-center content-center">
+						<button id="copy_btn" class="inline-block rounded-full w-[80px] h-[35px] btn">복사</button>
 					</div>
 				</div>
 			</div>
@@ -82,7 +108,7 @@
 			<!-- //result 한 줄영역 -->
 			<div class="py-5 text-center">
 				Click on the text to copy
-				<div id="one_line_result" class="w-5/6 p-5 m-auto">
+				<div id="one_line_result" class="w-5/6 p-5 m-auto data">
 				</div>
 			</div>
 			<!-- //result 한 줄영역 -->
