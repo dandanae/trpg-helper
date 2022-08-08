@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Shrikhand&display=swap');
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.manjari100{font-family: 'Manjari', sans-serif; font-weight: 100;}
+.manjari400{font-family: 'Manjari', sans-serif; font-weight: 400;}
+.manjari700{font-family: 'Manjari', sans-serif; font-weight: 700;}
+.shrikhand{font-family: 'Shrikhand', cursive; font-weight: 400;}
+
+.title{
+	display: inline-block;
+	padding: 2px 15px;
+	border-radius: 100px;
+	color: #fff;
+	transform: skewY(-8deg);
+	position: relative;
+	left: -8%;
+	bottom: 3px;
+	background-image: linear-gradient(40deg, #818cf8 0%, #818cf8 40%, #d946ef 100%);
+	box-shadow: 0px 0px 5px #818cf8;
+}
+
+.title::before{
+	content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #818cf8;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 15px solid transparent;
+    left: 35%;
+    top: 98%;
+}
+
+::-webkit-scrollbar { width: 8px; }
+   
+::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 20px; }
+  
+::-webkit-scrollbar-track { background: transparent; }
+
+.suit { font-family: 'SUIT-Regular'; }
+.roboto{ font-family: 'Roboto', sans-serif !important; }
+
+.chk { border: 1px solid red; }
+
+.h-400px { height: 400px; }
+
+.chk_box input { display: none; }
+
+.chk_box span {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.chk_box .icon {
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border: solid 1px #BFA2DB;
+	border-radius: 3px;
+	transition: background 0.1s ease;
+}
+
+.chk_box .icon::after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 4px;
+	width: 5px;
+	height: 8px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transform: rotate(45deg) scale(0);
+	transition: all 0.3s ease;
+	transition-delay: 0.15s;
+	opacity: 0;
+}
+
+.chk_box input:checked ~ .icon {
+	border-color: transparent;
+	background: #BFA2DB;
+	animation: jelly 0.6s ease;
+}
+
+.chk_box input:checked ~ .icon::after {
+	opacity: 1;
+	transform: rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+	from {transform: scale(1, 1);}
+	30% {transform: scale(1.25, 0.75);}
+	40% {transform: scale(0.75, 1.25);}
+	50% {transform: scale(1.15, 0.85);}
+	65% {transform: scale(0.95, 1.05);}
+	75% {transform: scale(1.05, 0.95);}
+	to {transform: scale(1, 1);}
+}
+
+.pop_up {
+    display: none;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 3px;
+    background-color: rgba(191, 162, 219, 0.2);
+    color: #7F7C82;
+    backdrop-filter: blur(2px);
+    position: relative;
+	animation: jelly 1s;
+}
+
+.pop_up::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 8px solid rgba(191, 162, 219, 0.2);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 15px solid transparent;
+    left: 55px;
+    top: 40px;
+}
+
+#one_line_result {
+	padding: 20px;
+	justify-content: center;
+}
+
+.result_div {
+
+}
+
+.one_copy_btn {
+
+}
