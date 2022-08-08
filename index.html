@@ -1,12 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <h1>첫 깃허브페이지입니다</h1>
-</body>
+<!DOCTYPE HTML>
+<html lang = "ko">
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="java.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	
+	<body>
+		<header>
+			<!-- 헤더 영역 -->
+			<header>
+				<div class="flex flex-col justify-center mt-7 text-center">
+					<div id="logo" class="relative w-48 m-auto shrikhand">
+						<div class="text-2xl title">TRPG</div>
+						<div class="inline-block text-5xl shrikhand"> helper</div>
+					</div>
+					<div id="menu" class="text-xl manjari100 mt-1">how to use /desc css ect</div>
+				</div>
+			</header>
+			<!-- //헤더 영역 -->
+			<div class="my-5 border-b-2 border-b-indigo-100"></div>
+		</header>
+		<main class="suit">
+			<!-- 메인 영역 -->
+			<div class="flex justify-center p-5">
+				<!-- input 영역 -->
+				<div class="w-5/12 mr-8 text-center">
+					
+					<!-- 문장 입력 -->
+					<textarea id="input_text" class="w-full p-5 text-sm leading-normal tracking-tighter border border-indigo-200 rounded-sm resize-none text-slate-500 bg-indigo-50 h-400px focus:outline-indigo-300"></textarea>
+					
+					<!-- 옵션 설정 -->
+					<div class="w-full m-auto text-sm text-left text-slate-500">
+						
+						<!-- 물음표 활성화-->
+						<div class="inline-block ml-1">
+							<label class="chk_box">
+								<input type="checkbox" id='use_question'>
+								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="text-sm text-slate-500 ml-1.5 mr-4">물음표</span>
+							</label>
+
+							<!-- 느낌표 활성화-->
+							<label class="chk_box">
+								<input type="checkbox" id='use_exclamation'>
+								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="text-sm text-slate-500 ml-1.5 mr-4">느낌표</span>
+							</label>
+
+							<!-- 쉼표 활성화-->
+							<label class="chk_box">
+								<input type='checkbox' id='use_comma'>
+								<span class="border-indigo-200 rounded-sm icon"></span>
+								<span class="text-sm text-slate-500 ml-1.5 mr-4">쉼표</span>
+							</label>
+						</div>
+						<!-- //옵션 설정 -->
+
+						<!-- 변환 버튼 -->
+						<div class="inline-block float-right">
+							<button id="convert" class="inline-block px-5 py-1 mr-1 text-white bg-indigo-200 rounded-full hover:bg-indigo-300 md:mx-0">변환</button>
+						</div>
+						
+					</div>
+					
+					<!-- //옵션 설정 -->
+				</div>
+				<!-- //input 영역 -->	
+				
+				<!-- result 영역 -->
+				<div class="w-5/12 ml-8 text-center">
+					<div id="result" class="p-5 m-auto overflow-y-scroll text-sm leading-normal tracking-tighter text-left border border-indigo-200 rounded-sm text-slate-500 bg-indigo-50 h-400px"></div>
+					<div class=" m-auto text-sm text-slate-500 text-right pt-1.5 align-middle justify-center content-center">
+						<button id="copy_btn" class="inline-block px-5 py-1 text-white bg-indigo-200 rounded-full hover:bg-indigo-300 md:mx-0">복사</button>
+					</div>
+				</div>
+			</div>
+			<!-- //result 전체 영역 -->
+
+			<!-- //result 한 줄영역 -->
+			<div class="py-5 text-center">
+				Click on the text to copy
+				<div id="one_line_result" class="w-5/6 p-5 m-auto">
+				</div>
+			</div>
+			<!-- //result 한 줄영역 -->
+
+			<!-- 팝업 -->
+            <div id="pop_up" class="pop_up">
+				복사 완료!
+			</div>
+			<!-- //팝업 -->
+
+		</main>
+	</body>
+	<footer>
+		<div style="height: 30px; padding: 50px;"></div>
+	</footer>
 </html>
