@@ -22,8 +22,8 @@ function pop_up(e)
 {
     const pop = document.getElementById('pop_up');
 
-    const move_left = e.clientX - 60;
-    const move_top = e.clientY - 65;
+    const move_left = e.screenX - 60;
+    const move_top = e.screenY - 65;
 
     pop.style.left = move_left + 'px';
     pop.style.top = move_top + 'px';
