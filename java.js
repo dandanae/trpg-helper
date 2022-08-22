@@ -1,26 +1,23 @@
-
-//변환 버튼 누르면 실행
 window.onload = function()
 {
-	const olr = document.getElementById('one_line_result');
+	const olr = document.getElementById('oneLineResult');
     
 	document.getElementById('convert').onclick = () =>
   {
-		if (olr.hasChildNodes()) { remove_result(); print_result(); }
-		else  print_result();
+		if (olr.hasChildNodes()) { removeResult(); printResult(); }
+		else 
+    printResult();
 	}
 }
 
-//복사 버튼 누르면 실행, 팝업
 window.addEventListener('load', function(e)
 {
-  document.getElementById('copy_btn').onclick = (e) => { pop_up(e); result_all_copy(); }
+  document.getElementById('copyBtn').onclick = (e) => { showPopup(e); copyAll(); }
 });
 
-//팝업
-function pop_up(e)
+function showPopup(e)
 {
-  const pop = document.getElementById('pop_up');
+  const pop = document.getElementById('popUp');
 
   const move_left = e.pageX - 60;
   const move_top = e.pageY - 65;
@@ -33,66 +30,66 @@ function pop_up(e)
   setTimeout(function() { pop.style.display='none'; }, 1200);
 }
 
-//결과 출력
-function print_result()
+function printResult()
 {
-  const text_box = document.getElementById('input_text');
+  const text_box = document.getElementById('inputText');
 
-  const q = document.getElementById('use_question').checked;
-  const e = document.getElementById('use_exclamation').checked;
-  const c = document.getElementById('use_comma').checked;
+  const question = document.getElementById('useQuestion').checked;
+  const exclamation = document.getElementById('useExclamation').checked;
+  const comma = document.getElementById('useComma').checked;
+  const enter = document.getElementById('useEnterTwice').checked;
 
   let lines;
 
-  if (true == q && false == e && false == c) { lines = text_box.value.split(/(?<=\?)|(?<=\.)/); }
-  else if (false == q && true == e && false == c) { lines = text_box.value.split(/(?<=\!)|(?<=\.)/); }
-  else if (false == q && false == e && true == c) { lines = text_box.value.split(/(?<=\,)|(?<=\.)/); }
-  else if (true == q && true == e && false == c) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)/); }
-  else if (true == q && false == e && true == c) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)/); }
-  else if (false == q && true == e && true == c) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)/); }
-  else if (true == q && true == e && true == c) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)/); }
+  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)/); }
+  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)/); }
+  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)/); }
+  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)/); }
+  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)/); }
+  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)/); }
+  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)/); }
   else { lines = text_box.value.split(/(?<=\.)/); }
 
-  let result_str = "";
-
-  //한번에 출력
-  for (let i = 0; i < lines.length; i++) { result_str += '/desc ' + lines[i] + '<br/>'; }
-
-  result_str += "";
+  let resultStr = "";
+  if(true==enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
+  else { for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r'; } }
+  
+  resultStr += "";
 
   const resBox = document.getElementById('result');
   
-  resBox.innerHTML = result_str;
+  resBox.innerHTML = resultStr;
 
-  let result_str2 = "";
+  let resultStr2 = "";
 
-  const one_line = document.getElementById('one_line_result');
+  const one_line = document.getElementById('oneLineResult');
 
   for (let i = 0; i < lines.length; i++)
   {
-    result_str2 = '/desc ' + lines[i];
+    resultStr2 = '/desc ' + lines[i];
 
     const new_div = document.createElement('div');
-    new_div.innerHTML = result_str2;
-    new_div.setAttribute('class', 'result_div m-2 text-left cursor-pointer text-sm text-slate-500 border border-indigo-200 bg-indigo-50 rounded-sm m-auto py-2 px-5 leading-normal tracking-tighter');
+    new_div.innerHTML = resultStr2;
+    new_div.setAttribute('class', 'm-2 text-left cursor-pointer text-sm text-slate-500 border border-indigo-200 bg-indigo-50 rounded-sm m-auto py-2 px-5 leading-normal tracking-tighter');
+    new_div.setAttribute('id', 'resultDiv');
 
     one_line.appendChild(new_div);
   }
 
-  const copy = document.querySelectorAll('.result_div');
+  const copy = document.querySelectorAll('#resultDiv');
 
   for( let i = 0; i < copy.length; i++){
-    copy[i].addEventListener("click",function(e){ pop_up(e); window.navigator.clipboard.writeText(copy[i].innerText); });
+    copy[i].addEventListener("click",function(e){ showPopup(e); window.navigator.clipboard.writeText(copy[i].innerText); });
   }
 }
 
-function remove_result() {
-  const pare = document.getElementById("one_line_result");
+function removeResult() {
+  const pare = document.getElementById("oneLineResult");
   while (pare.hasChildNodes()) {
   pare.removeChild(pare.firstChild);
   }
 }
-function result_all_copy() {
+function copyAll() {
 	const result = document.getElementById("result");
-	window.navigator.clipboard.writeText(result.innerText);
+	window.navigator.clipboard.writeText(result.value);
 }
