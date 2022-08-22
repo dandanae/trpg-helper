@@ -10,7 +10,7 @@
 	<body>
 		<header>
 			<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-slate-700">
-				<div id="logo" class="relative w-24 ml-12 mr-12 shrikhand">
+				<div class="relative w-24 ml-12 mr-12 shrikhand ani jelly">
 					<div class="text-normal relative py-0.5 px-1.5 left-[10%] shadow shadow-indigo-500 title inline-block grad rounded-full text-white skew-y-[-8deg] before:content-[''] before:absolute before:w-0 before:h-0 before:border-t-8 before:border-t-solid before:border-t-indigo-400 before:border-x-[6px] before:border-x-solid before:border-x-transparent before:border-b-[15px] before:border-b-solid before:border-b-transparent before:left-[35%] before:top-[98%]">TRPG</div>
 					<div class="inline-block text-3xl"> helper</div>
 				</div>
@@ -91,15 +91,22 @@
 			</div>
 		</section>
 		<div class="py-5 text-center">
-			Click on the text to copy
-			<div id="oneLineResult" class="w-5/6 p-5 m-auto data">
+			<p class="text-2xl text-left shrikhand text-slate-700 text-center">One line result</p>
+			<div id="oneLineResult" class="w-5/6 p-5 m-auto">
 			</div>
 		</div>
-		<div id="popUp" class="pop_up">
+		<div id="popUp" class="popUp">
 			복사 완료!
 		</div>
 	</body>
-
-
-  
+	<footer class="text-gray-600 body-font mt-14 suit">
+		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+			<a class="flex title-font font-medium items-center md:justify-start justify-center text-slate-700">
+				<span class="ml-3 text-xl shrikhand bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-fuchsia-500">TRPG</span><span class="ml-1 text-xl shrikhand">HELPER</span>
+			</a>
+			<p class="text-sm text-slate-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"> Made by
+				<a href="https://twitter.com/h4rd3n_ff" class="text-slate-500 hover:text-indigo-300 hover:font-bold" rel="noopener noreferrer" target="_blank">@h4rd3n_ff</a>
+			</p>
+		</div>
+	</footer>
 </html>
