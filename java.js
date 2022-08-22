@@ -70,7 +70,7 @@ function printResult()
 
     const new_div = document.createElement('div');
     new_div.innerHTML = resultStr2;
-    new_div.setAttribute('class', 'm-2 text-left cursor-pointer text-sm text-slate-500 border border-indigo-200 bg-indigo-50 rounded-sm m-auto py-2 px-5 leading-normal tracking-tighter');
+    new_div.setAttribute('class', 'm-2 text-left cursor-pointer text-sm text-slate-500 border border-indigo-400 rounded-full m-auto py-2 px-5 leading-normal tracking-tighter');
     new_div.setAttribute('id', 'resultDiv');
 
     one_line.appendChild(new_div);
