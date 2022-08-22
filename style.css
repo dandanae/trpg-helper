@@ -9,70 +9,22 @@
 .bebas { font-family: 'Bebas Neue', cursive; }
 .shrikhand { font-family: 'Shrikhand', cursive; font-weight: 400; }
 .grad { background-image: linear-gradient(40deg, #818cf8 0%, #818cf8 40%, #d946ef 100%); }
+.suit { font-family: 'SUIT-Regular'; }
+.roboto{ font-family: 'Roboto', sans-serif !important; }
 
-.menu-space {
-	position: relative;
+.ani {
+	transition-timing-function: cubic-bezier(.8,.09,1,.44);
+	transition-delay: 400ms;
+	transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
 }
-
-.menu-space::before {
-	content: '';
-	width: 10px;
-	height: 10%;
-	background-image: linear-gradient(40deg, #818cf8 0%, #d946ef 100%);
-	position: absolute;
-	border-radius: 30px;
-	top: 80%;
-	left: 0;
+.b_ani::before {
 	transition-timing-function: cubic-bezier(.8,.09,1,.44);
 	transition-delay: 400ms;
 	transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
 }
 
-.menu-item {
-	position: relative;
-}
-
-.menu-item::before{
-	content: attr(data-title);
-	color: #818cf8;
-	position: absolute;
-	width: 0;
-	height: 100%;
-	overflow: hidden;
-	transition: 0.6s;
-	transition-timing-function: cubic-bezier(.8,.09,1,.44);
-	transition-delay: 400ms;
-	transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
-}
-
-.menu-space:hover .menu-item::before, .menu-space:hover::before
+.menu:hover .item::before, .menu:hover::before
 { width: 100% }
-
-.btn {
-	position: relative;	
-	color: #818cf8;
-	border-radius: 50px;
-	transition-timing-function: cubic-bezier(.8,.09,1,.44);
-	transition-delay: 400ms;
-	transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
-}
-
-.btn:hover {color: #fff;}
-
-.btn::before {
-	content: '';
-	transition-timing-function: cubic-bezier(.8,.09,1,.44);
-	transition-delay: 400ms;
-	transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
-	width: 80%;
-	height: 15%;
-	background-image: linear-gradient(40deg, #818cf8 0%, #818cf8 40%, #d946ef 100%);
-	position: absolute;
-	bottom: 0;
-	left: 10%;
-	border-radius: 30px;
-	z-index: -1;
-}
 
 .btn:hover::before {
 	left: 0;
@@ -80,53 +32,17 @@
 	height:100%;
 }
 
-
-.title{
-	display: inline-block;
-	padding: 2px 15px;
-	border-radius: 100px;
-	color: #fff;
-	transform: skewY(-8deg);
-	position: relative;
-	left: -8%;
-	bottom: 3px;
-	box-shadow: 0px 0px 5px #818cf8;
-}
-
-.title::before{
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-top: 8px solid #818cf8;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-bottom: 15px solid transparent;
-	left: 35%;
-	top: 98%;
-}
-
 ::-webkit-scrollbar { width: 8px; }
-   
 ::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 20px; }
-  
 ::-webkit-scrollbar-track { background: transparent; }
 
-.suit { font-family: 'SUIT-Regular'; }
-.roboto{ font-family: 'Roboto', sans-serif !important; }
-#menu a:hover {
-	animation: jelly 0.6s ease;
-}
 .chk { border: 1px solid red; }
-
 .chk_box input { display: none; }
-
 .chk_box span {
 	display: inline-block;
 	vertical-align: middle;
 	cursor: pointer;
 }
-
 .chk_box .icon {
 	position: relative;
 	width: 16px;
@@ -135,7 +51,6 @@
 	border-radius: 5px;
 	transition: background 0.1s ease;
 }
-
 .chk_box .icon::after {
 	content: '';
 	position: absolute;
@@ -150,13 +65,11 @@
 	transition-delay: 0.15s;
 	opacity: 0;
 }
-
 .chk_box input:checked ~ .icon {
 	border-color: transparent;
 	background: #818cf8;
 	animation: jelly 0.6s ease;
 }
-
 .chk_box input:checked ~ .icon::after {
 	opacity: 1;
 	transform: rotate(45deg) scale(1);
