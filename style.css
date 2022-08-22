@@ -85,7 +85,7 @@
 	to {transform: scale(1, 1);}
 }
 
-.pop_up {
+.popUp {
 	display: none;
 	width: 130px;
 	height: 40px;
@@ -101,7 +101,7 @@
 	animation: jelly 1s;
 }
 
-.pop_up::before{
+.popUp::before{
 	content: '';
 	position: absolute;
 	width: 0;
@@ -114,9 +114,4 @@
 	top: 40px;
 }
 
-#one_line_result {
-	padding: 20px;
-	justify-content: center;
-}
-
-#logo:hover {animation: jelly 0.8s ease;}
+.jelly:hover {animation: jelly 0.8s ease;}
