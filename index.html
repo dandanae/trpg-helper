@@ -31,71 +31,9 @@
 			</div>
 		</header>
 		
-		<section class="text-slate-700 body-font overflow-hidden">
-			<div class="container px-5 py-24 mx-auto">
-				<div class="flex flex-wrap -m-12">
-					<div class="p-12 md:w-1/2 flex flex-col items-start">
-						<div class="mb-3">
-							<p class="text-2xl text-left shrikhand">Before</p>
-						</div>
-						<textarea id="inputText" class="h-[400px] w-full w-min-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-indigo-400"></textarea>
-						<div class="w-full m-auto text-sm text-slate-500 pt-1.5 align-middle justify-center content-center">
-						
-							<!-- 물음표 활성화-->
-							<div class="inline-block ml-1">
-								<label class="chk_box">
-									<input type="checkbox" id='useQuestion'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">물음표</span>
-								</label>
-	
-								<!-- 느낌표 활성화-->
-								<label class="chk_box">
-									<input type="checkbox" id='useExclamation'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">느낌표</span>
-								</label>
-	
-								<!-- 쉼표 활성화-->
-								<label class="chk_box">
-									<input type='checkbox' id='useComma'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">쉼표</span>
-								</label>
-
-								<label class="chk_box">
-									<input type='checkbox' id='useEnterTwice'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">엔터 두 번</span>
-								</label>
-							</div>
-							<!-- //옵션 설정 -->
-	
-							<!-- 변환 버튼 -->
-							<div class="inline-block float-right">
-								<button id="convert" class=" inline-block relative rounded-full w-[80px] h-[35px] hover:text-white ani before:content-[''] before:absolute b_ani before:w-4/5 before:h-[15%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:bottom-0 before:left-[10%] before:rounded-full before:z-[-1] hover:text-white btn">변환</button>
-							</div>
-						</div>
-					</div>
-					<div class="p-12 md:w-1/2 flex flex-col items-start">
-						<div class="mb-3">
-							<p class="text-2xl text-left shrikhand text-slate-700">After</p>
-						</div>
-						<textarea readonly id="result" class="h-[400px] w-full w-min-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-none"></textarea>
-						<div class="w-full m-auto text-sm text-slate-500 text-right pt-1.5 align-middle justify-center content-center">
-							<button id="copyBtn" class="inline-block relative rounded-full w-[80px] h-[35px] hover:text-white ani before:content-[''] before:absolute b_ani before:w-4/5 before:h-[15%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:bottom-0 before:left-[10%] before:rounded-full before:z-[-1] hover:text-white btn">복사</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="py-5 text-center">
-			<p class="text-2xl text-left shrikhand text-slate-700 text-center">One line result</p>
-			<div id="oneLineResult" class="w-5/6 p-5 m-auto">
-			</div>
-		</div>
-		<div id="popUp" class="popUp">
-			복사 완료!
+		<div class="text-slate-700 suit w-6/12 m-auto text-center">
+			/desc 와 css(일부) 구현 완료 필요한 기능은 연락 바랍니다.<br/>
+			추가 예정) 매크로 기능
 		</div>
 	</body>
 	<footer class="text-gray-600 body-font mt-14 suit">
