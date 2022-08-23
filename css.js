@@ -33,21 +33,21 @@ function changeFont()
     all.classList.remove('gms');
     all.classList.remove('nx2');
     all.classList.remove('suit');
-    all.setAttribute('class', 'gms');
+    all.classList.add('class', 'gms');
   }
   else if (2 == value)
   {
     all.classList.remove('gms');
     all.classList.remove('nx2');
     all.classList.remove('suit');
-    all.setAttribute('class', 'nx2');
+    all.classList.add('class', 'nx2');
   }
   else if (3 == value)
   {
     all.classList.remove('gms');
     all.classList.remove('nx2');
     all.classList.remove('suit');
-    all.setAttribute('class', 'suit');
+    all.classList.add('class', 'suit');
   }
   else if(4 == value){
     all.classList.remove('gms');
