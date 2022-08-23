@@ -1,111 +1,95 @@
-<!DOCTYPE HTML>
-<html lang = "ko">
-	<head>
-		<meta charset="UTF-8">
-		<title>우왕</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="java.js"></script>
-		<script src="https://cdn.tailwindcss.com"></script>
-	</head>
-	<body>
-		<header>
-			<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-slate-700">
-				<div class="relative w-24 ml-12 mr-12 shrikhand ani jelly">
-					<div class="text-normal relative py-0.5 px-1.5 left-[10%] shadow shadow-indigo-500 title inline-block grad rounded-full text-white skew-y-[-8deg] before:content-[''] before:absolute before:w-0 before:h-0 before:border-t-8 before:border-t-solid before:border-t-indigo-400 before:border-x-[6px] before:border-x-solid before:border-x-transparent before:border-b-[15px] before:border-b-solid before:border-b-transparent before:left-[35%] before:top-[98%]">TRPG</div>
-					<div class="inline-block text-3xl"> helper</div>
-				</div>
-				<nav class="md:ml-auto bebas flex flex-wrap items-center text-base justify-center text-2xl">
-					<div class="inline-block px-2 py-0.5 ml-10 relative before:content-[''] before:absolute before:w-2.5 before:h-[10%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:rounded-full before:top-[80%] before:left-0 b_ani menu">
-						<a href="#" class="relative before:content-['rule'] before:text-indigo-400 before:absolute before:w-0 before:h-full before:overflow-hidden b_ani item">rule</a>
-					</div>
-					<div class="inline-block px-2 py-0.5 ml-10 relative before:content-[''] before:absolute before:w-2.5 before:h-[10%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:rounded-full before:top-[80%] before:left-0 b_ani menu">
-						<a href="desc.html" class="relative before:content-['/desc'] before:text-indigo-400 before:absolute before:w-0 before:h-full before:overflow-hidden b_ani item">/desc</a>
-					</div>
-					<div class="inline-block px-2 py-0.5 ml-10 relative before:content-[''] before:absolute before:w-2.5 before:h-[10%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:rounded-full before:top-[80%] before:left-0 b_ani menu">
-						<a href="css.html" class="relative before:content-['css'] before:text-indigo-400 before:absolute before:w-0 before:h-full before:overflow-hidden b_ani item">css</a>
-					</div>
-					<div class="inline-block px-2 py-0.5 ml-10 relative before:content-[''] before:absolute before:w-2.5 before:h-[10%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:rounded-full before:top-[80%] before:left-0 b_ani menu">
-						<a href="#" class="relative before:content-['etc'] before:text-indigo-400 before:absolute before:w-0 before:h-full before:overflow-hidden b_ani item">etc</a>
-					</div>
-				</nav>
-			</div>
-		</header>
-		
-		<section class="text-slate-700 body-font overflow-hidden">
-			<div class="container px-5 py-24 mx-auto">
-				<div class="flex flex-wrap -m-12">
-					<div class="p-12 md:w-1/2 flex flex-col items-start">
-						<div class="mb-3">
-							<p class="text-2xl text-left shrikhand">Before</p>
-						</div>
-						<textarea id="inputText" class="h-[400px] w-full w-min-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-indigo-400"></textarea>
-						<div class="w-full m-auto text-sm text-slate-500 pt-1.5 align-middle justify-center content-center">
-						
-							<!-- 물음표 활성화-->
-							<div class="inline-block ml-1">
-								<label class="chk_box">
-									<input type="checkbox" id='useQuestion'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">물음표</span>
-								</label>
-	
-								<!-- 느낌표 활성화-->
-								<label class="chk_box">
-									<input type="checkbox" id='useExclamation'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">느낌표</span>
-								</label>
-	
-								<!-- 쉼표 활성화-->
-								<label class="chk_box">
-									<input type='checkbox' id='useComma'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">쉼표</span>
-								</label>
+window.onload = function()
+{
+	const olr = document.getElementById('oneLineResult');
+    
+	document.getElementById('convert').onclick = () =>
+  {
+		if (olr.hasChildNodes()) { removeResult(); printResult(); }
+		else 
+    printResult();
+	}
+}
 
-								<label class="chk_box">
-									<input type='checkbox' id='useEnterTwice'>
-									<span class="icon"></span>
-									<span class="text-sm text-slate-500 ml-1.5 mr-4">엔터 두 번</span>
-								</label>
-							</div>
-							<!-- //옵션 설정 -->
-	
-							<!-- 변환 버튼 -->
-							<div class="inline-block float-right">
-								<button id="convert" class=" inline-block relative rounded-full w-[80px] h-[35px] hover:text-white ani before:content-[''] before:absolute b_ani before:w-4/5 before:h-[15%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:bottom-0 before:left-[10%] before:rounded-full before:z-[-1] hover:text-white btn">변환</button>
-							</div>
-						</div>
-					</div>
-					<div class="p-12 md:w-1/2 flex flex-col items-start">
-						<div class="mb-3">
-							<p class="text-2xl text-left shrikhand text-slate-700">After</p>
-						</div>
-						<textarea readonly id="result" class="h-[400px] w-full w-min-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-none"></textarea>
-						<div class="w-full m-auto text-sm text-slate-500 text-right pt-1.5 align-middle justify-center content-center">
-							<button id="copyBtn" class="inline-block relative rounded-full w-[80px] h-[35px] hover:text-white ani before:content-[''] before:absolute b_ani before:w-4/5 before:h-[15%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:bottom-0 before:left-[10%] before:rounded-full before:z-[-1] hover:text-white btn">복사</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="py-5 text-center">
-			<p class="text-2xl text-left shrikhand text-slate-700 text-center">One line result</p>
-			<div id="oneLineResult" class="w-5/6 p-5 m-auto">
-			</div>
-		</div>
-		<div id="popUp" class="popUp">
-			복사 완료!
-		</div>
-	</body>
-	<footer class="text-gray-600 body-font mt-14 suit">
-		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-			<a class="flex title-font font-medium items-center md:justify-start justify-center text-slate-700">
-				<span class="ml-3 text-xl shrikhand bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-fuchsia-500">TRPG</span><span class="ml-1 text-xl shrikhand">HELPER</span>
-			</a>
-			<p class="text-sm text-slate-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"> Made by
-				<a href="https://twitter.com/h4rd3n_ff" class="text-slate-500 hover:text-indigo-300 hover:font-bold" rel="noopener noreferrer" target="_blank">@h4rd3n_ff</a>
-			</p>
-		</div>
-	</footer>
-</html>
+window.addEventListener('load', function(e)
+{
+  document.getElementById('copyBtn').onclick = (e) => { showPopup(e); copyAll(); }
+});
+
+function showPopup(e)
+{
+  const pop = document.getElementById('popUp');
+
+  const move_left = e.pageX - 60;
+  const move_top = e.pageY - 65;
+
+  pop.style.left = move_left + 'px';
+  pop.style.top = move_top + 'px';
+  pop.style.position = 'absolute';
+  pop.style.display = 'block';
+
+  setTimeout(function() { pop.style.display='none'; }, 1200);
+}
+
+function printResult()
+{
+  const text_box = document.getElementById('inputText');
+
+  const question = document.getElementById('useQuestion').checked;
+  const exclamation = document.getElementById('useExclamation').checked;
+  const comma = document.getElementById('useComma').checked;
+  const enter = document.getElementById('useEnterTwice').checked;
+
+  let lines;
+
+  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)|(?:\n)/); }
+  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)|(?:\n)/); }
+  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)|(?:\n)/); }
+  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)|(?:\n)/); }
+  else { lines = text_box.value.split(/(?<=\.)|(?:\n)/); }
+
+  let resultStr = "";
+  if(true==enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
+  else { for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r'; } }
+  
+  resultStr += "";
+
+  const resBox = document.getElementById('result');
+  
+  resBox.innerHTML = resultStr;
+
+  let resultStr2 = "";
+
+  const one_line = document.getElementById('oneLineResult');
+
+  for (let i = 0; i < lines.length; i++)
+  {
+    resultStr2 = '/desc ' + lines[i];
+
+    const new_div = document.createElement('div');
+    new_div.innerHTML = resultStr2;
+    new_div.setAttribute('class', 'm-2 text-left cursor-pointer text-sm text-slate-500 border border-indigo-400 rounded-full m-auto py-2 px-5 leading-normal tracking-tighter');
+    new_div.setAttribute('id', 'resultDiv');
+
+    one_line.appendChild(new_div);
+  }
+
+  const copy = document.querySelectorAll('#resultDiv');
+
+  for( let i = 0; i < copy.length; i++){
+    copy[i].addEventListener("click",function(e){ showPopup(e); window.navigator.clipboard.writeText(copy[i].innerText); });
+  }
+}
+
+function removeResult() {
+  const pare = document.getElementById("oneLineResult");
+  while (pare.hasChildNodes()) {
+  pare.removeChild(pare.firstChild);
+  }
+}
+function copyAll() {
+	const result = document.getElementById("result");
+	window.navigator.clipboard.writeText(result.value);
+}
