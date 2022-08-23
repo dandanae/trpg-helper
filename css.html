@@ -5,6 +5,8 @@
 		<title>우왕</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="color.css" />
+        <script src="color.js"></script>
 		<script src="css.js"></script>
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
@@ -33,21 +35,21 @@
 			</div>
 		</header>
 		<section class="text-gray-600 body-font">
-			<div class="container px-5 py-24 mx-auto">
-				<div class="flex flex-col w-full mb-20 text-xs">
+			<div class="container px-5 py-24 mx-auto text-sm">
+				<div class="flex flex-col w-full mb-20">
 					<h2 class="text-2xl text-slate-700 tracking-widest title-font mb-1 text-center shrikhand">userCSS setting</h2>
-					<div id="all">
-						<div id="desc" class="message desc">
+					<div id="all" class="w-3/5 m-auto">
+						<div class="message desc">
 							<div class="spacer" id="spacer"></div>
 							성산시 시립 도서관이란?
 						</div>
 
-						<div id="desc" class="message desc">
+						<div class="message desc">
 							<div class="spacer" id="spacer"></div>
 							성산시는 한국 경기도에 위치한, 크툴루 신화의 영향을 크게 받는 가상의 소도시입니다. 수도권의 가장자리에 있고 발전이 좀 더디지만 문제는 그게 아닙니다…….
 						</div>
 
-						<div id="messageMe" class="message general you">
+						<div class="message general you">
 							<div class="spacer" id="spacer"></div>
 							<div class="avatar" aria-hidden="true">
 								<img src="https://s3.amazonaws.com/files.d20.io/images/300488956/2z3Txm-jDHIhFL9rt-buSA/med.jpg?1660973563">
@@ -57,7 +59,7 @@
 							곧 나올 시나리오집 성산시의 어둠에서 소개되고, 도시 설정은 플레이와 창작에 자유로이 사용하실 수 있도록 무료 공개할 예정입니다.
 						</div>
 
-						<div id="messageYou" class="message general">
+						<div class="message general">
 							<div class="spacer" id="spacer"></div>
 							<div class="avatar" aria-hidden="true">
 								<img src="https://s3.amazonaws.com/files.d20.io/images/290351805/Lvle0CnFAfu4UyEcVhjGJw/max.png?1655531012">
@@ -67,7 +69,7 @@
 							성산시 시립도서관은 크툴루의 부름 자료를 독자 여러분이 직접 쓰고 출간하기 위한 공식 팬 창작 정책입니다.
 						</div>
 
-						<div id="messageMe"class="message general you">
+						<div class="message general you">
 							<div class="spacer" id="spacer"></div>
 							<div class="avatar" aria-hidden="true">
 								<img src="https://s3.amazonaws.com/files.d20.io/images/300488956/2z3Txm-jDHIhFL9rt-buSA/med.jpg?1660973563">
@@ -77,7 +79,7 @@
 							시나리오, 설정, 주문, 신화 생물 등, 크툴루의 부름과 함께 사용할 수 있는 자료면 됩니다.
 						</div>
 
-						<div id="messageYou" class="message general">
+						<div class="message general">
 							<div class="spacer" id="spacer"></div>
 							<div class="avatar" aria-hidden="true">
 								<img src="https://s3.amazonaws.com/files.d20.io/images/290351805/Lvle0CnFAfu4UyEcVhjGJw/max.png?1655531012">
@@ -87,69 +89,111 @@
 							성산시 시립도서관은 인쇄물에만 해당되며, 디지털 작품에는 해당되지 않습니다. 디지털 저작물은 무료로 공개하거나 (기부 버튼이나 광고를 두어 간접 수익을 얻는 것은 괜찮습니다), 카오시움의 미스카토닉 레포지토리 (Miskatonic Repository)를 이용하셔야 합니다. (미스카토닉 레포지토리의 이용은 여기를 참조하세요.
 						</div>
 
-						<div id="desc" class="message desc">
+						<div  class="message desc">
 							<div class="spacer" id="spacer"></div>
 							유료 회원에게만 PDF나 전자문서의 열람을 허용하는 것은 디지털 작품의 유료 판매와 다를 바 없으므로 금지됩니다.
 						</div>
 					</div>
-					<div class="flex suit flex-col">
-					<form class="mt-2" onchange="changeFont()">
+					<div class="flex suit flex-col w-3/5 m-auto pl-12 mt-2">
+						<form class="mt-2" onchange="changeFont()">
+							<div class="inline-block text-xs text-slate-400 w-24">전체 폰트 설정</div>
+							<label>
+								<input type="radio" name="font" value="1" class="hidden">
+								<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">지마켓</span>
+							</label>
+
+							<label>
+								<input type="radio" name="font" value="2" class="hidden">
+								<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">넥슨 Lv.2 고딕</span>
+							</label>
+
+							<label>
+								<input type="radio" name="font" value="3" class="hidden">
+								<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">수트</span>
+							</label>
+
+							<label>
+								<input type="radio" name="font" value="4" class="hidden">
+								<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">기본</span>
+							</label>
+
+							<label>
+								<input type="radio" name="font" value="5" class="hidden" disabled>
+								<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-200 text-center rounded-full text-indigo-200">커스텀(준비 중)</span>
+							</label>
+					</form>
+
+					<form class="mt-2" onchange="changeLine()">
+						<div class="inline-block text-xs text-slate-400 w-24">채팅 구분선 설정</div>
 						<label>
-							<input type="radio" name="font" value="1" class="hidden">
-							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">지마켓</span>
+							<input type="radio" name="line" value="1" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">지우기</span>
 						</label>
 
 						<label>
-							<input type="radio" name="font" value="2" class="hidden">
-							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">넥슨 Lv.2 고딕</span>
-						</label>
-
-						<label>
-							<input type="radio" name="font" value="3" class="hidden">
-							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">수트</span>
-						</label>
-
-						<label>
-							<input type="radio" name="font" value="4" class="hidden">
+							<input type="radio" name="line" value="2" class="hidden">
 							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">기본</span>
 						</label>
+					</form>
+
+					<form class="mt-2" onchange="changeRound()">
+						<div class="inline-block text-xs text-slate-400 w-24">프로필 모양 설정</div>
+						<label>
+							<input type="radio" name="avatar" value="1" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">둥글게</span>
+						</label>
 
 						<label>
-							<input type="radio" name="font" value="5" class="hidden">
-							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">커스텀</span>
+							<input type="radio" name="avatar" value="2" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">기본</span>
 						</label>
-				</form>
+					</form>
 
-				<form class="mt-2" onchange="changeLine()">
-					<label>
-						<input type="radio" name="line" value="1" class="hidden">
-						<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">구분선 지우기</span>
-					</label>
+					<form class="mt-2" onchange="changeItalic()">
+						<div class="inline-block text-xs text-slate-400 w-24">본문 기울기 설정</div>
+						<label>
+							<input type="radio" name="setItalic" value="1" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">없애기</span>
+						</label>
 
-					<label>
-						<input type="radio" name="line" value="2" class="hidden">
-						<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">구분선 기본</span>
-					</label>
-				</form>
+						<label>
+							<input type="radio" name="setItalic" value="2" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">기본</span>
+						</label>
+					</form>
 
-				<form class="mt-2" onchange="changeRound()">
-					<label>
-						<input type="radio" name="round" value="1" class="hidden">
-						<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">프로필 둥글게</span>
-					</label>
+					<form class="mt-2" onchange="changeBold()">
+						<div class="inline-block text-xs text-slate-400 w-24">본문 굵기 설정</div>
+						<label>
+							<input type="radio" name="setBold" value="1" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">없애기</span>
+						</label>
 
-					<label>
-						<input type="radio" name="round" value="2" class="hidden">
-						<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">프로필 기본</span>
-					</label>
-				</form>
-
-			</div>
-				<textarea id="insert" class="bg-indigo-300 hidden"></textarea>
-
-					<div>채팅 배경 색 설정<br/>이름 설정<br/>남의 이름 설정<br/></div>
+						<label>
+							<input type="radio" name="setBold" value="2" class="hidden">
+							<span class="mr-2 inline-block px-2 py-0.5 border border-indigo-400 text-center rounded-full text-indigo-400">기본</span>
+						</label>
+					</form>
 					
+					<div class="mt-2">
+						<div class="inline-block text-xs text-slate-400 w-24">채팅 배경색 설정</div>
+						<div class="clr-field border border-indigo-400 rounded-full px-2 py-0.5" style="color: #d3e5f5">
+							<button type="button" aria-labelledby="clr-open-label" class="rounded-full mr-1" style="width: 1rem; height: 1rem;"></button>
+							<input id="bgColor" type="text" class="coloris text-indigo-400" value="#d3e5f5" onchange="changeBgColor()">
+						</div>
+					</div>
+
+					<div class="mt-2">
+						<div class="inline-block text-xs text-slate-400 w-24">이름 색 설정</div>
+						<div class="clr-field border border-indigo-400 rounded-full px-2 py-0.5" style="color: #333333">
+							<button type="button" aria-labelledby="clr-open-label" class="rounded-full mr-1" style="width: 1rem; height: 1rem;"></button>
+							<input id="mColor" type="text" class="coloris text-indigo-400" value="#333333" onchange="changeMyColor()">
+						</div>
+					</div>
+
+					<button id="confirmBtn" class="inline-block relative rounded-full w-[60px] h-[25px] hover:text-white ani before:content-[''] before:absolute b_ani before:w-4/5 before:h-[15%] before:bg-gradient-to-r before:from-indigo-300 before:to-fuchsia-500 before:bottom-0 before:left-[10%] before:rounded-full before:z-[-1] hover:text-white btn" onclick="confirm()">확정</button>
 				</div>
+			</div>
 				<div class="flex flex-wrap -m-4">
 					<div class="chk p-12 m-auto w-1/2">
 						<div id="result"  class="h-auto w-full w-min-full p-5 text-sm leading-normal tracking-tighter border border-indigo-400 rounded-lg resize-none text-slate-500 focus:outline-none break-all">
@@ -171,6 +215,9 @@
 		<div id="popUp" class="popUp">
 			복사 완료!
 		</div>
+        <div class="ml-48">
+            
+        </div>
 	</body>
 	<footer class="text-gray-600 body-font mt-14 suit">
 		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
