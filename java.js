@@ -1,6 +1,7 @@
 window.onload = function()
 {
 	const olr = document.getElementById('oneLineResult');
+    
 	document.getElementById('convert').onclick = () =>
   {
 		if (olr.hasChildNodes()) { removeResult(); printResult(); }
@@ -40,14 +41,14 @@ function printResult()
 
   let lines;
 
-  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)|(?<=\r)/); }
-  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)|(?<=\r)/); }
-  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)|(?<=\r)/); }
-  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)|(?<=\r)/); }
-  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)|(?<=\r)/); }
-  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)|(?<=\r)/); }
-  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)|(?<=\r)/); }
-  else { lines = text_box.value.split(/(?<=\.)|(?<=\r)/); }
+  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)|(?:\n)/); }
+  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)|(?:\n)/); }
+  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)|(?:\n)/); }
+  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)|(?:\n)/); }
+  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)|(?:\n)/); }
+  else { lines = text_box.value.split(/(?<=\.)|(?:\n)/); }
 
   let resultStr = "";
   if(true==enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
