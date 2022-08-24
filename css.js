@@ -183,19 +183,19 @@ function confirm()
   const mColor = document.getElementById('mColor').value;
   const bgColor = document.getElementById('bgColor').value;
 
-  let result;
+  let result = "";
 
   if(1 == font)
   {
-    result = "/* 지마켓 산스 */" + '\n' + "@font-face { font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: normal; ont-style: normal;}" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' +"* { font-family: 'GmarketSansMedium'; }" + '\n' + '\n';
+    result += "/* 지마켓 산스 */" + '\n' + "@font-face { font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: normal; ont-style: normal;}" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' +"* { font-family: 'GmarketSansMedium'; }" + '\n' + '\n';
   }
   else if(2 == font)
   {
-    result = "/* 넥슨 Lv.2 고딕 */" + '\n' +"@font-face { font-family: 'NEXON Lv2 Gothic'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff'); font-weight: normal; font-style: normal; }" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' +"* { font-family: 'NEXON Lv2 Gothic'; }" + '\n' + '\n';
+    result += "/* 넥슨 Lv.2 고딕 */" + '\n' +"@font-face { font-family: 'NEXON Lv2 Gothic'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff'); font-weight: normal; font-style: normal; }" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' +"* { font-family: 'NEXON Lv2 Gothic'; }" + '\n' + '\n';
   }
   else if(3 == font)
   {
-    result = "/* 수트 */" + '\n' + "@font-face { font-family: 'SUIT-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; }" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' + "* { font-family: 'SUIT-Regular'; }" + '\n' + '\n';
+    result += "/* 수트 */" + '\n' + "@font-face { font-family: 'SUIT-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; }" + '\n' + '\n' + "/*전체 폰트 설정*/" + '\n' + "* { font-family: 'SUIT-Regular'; }" + '\n' + '\n';
   }
 
   if(1 == line)
