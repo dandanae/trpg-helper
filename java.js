@@ -41,14 +41,16 @@ function printResult()
 
   let lines;
 
-  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)|(?:\n)/); }
-  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)|(?:\n)/); }
-  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)|(?:\n)/); }
-  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)|(?:\n)/); }
-  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)|(?:\n)/); }
-  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)|(?:\n)/); }
-  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)|(?:\n)/); }
-  else { lines = text_box.value.split(/(?<=\.)|(?:\n)/); }
+  if (true == question && false == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\.)/); }
+  else if (false == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\.)/); }
+  else if (false == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\,)|(?<=\.)/); }
+  else if (true == question && true == exclamation && false == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\!)|(?<=\.)/); }
+  else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)/); }
+  else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)/); }
+  else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)/); }
+  else { lines = text_box.value.split(/(?<=\.)/); }
+
+  for(let i = 0; i<lines.length; i++) { lines[i]=lines[i].trimStart(); }
 
   let resultStr = "";
   if(true==enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
