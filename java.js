@@ -48,7 +48,9 @@ function printResult()
   else if (true == question && false == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\.)/); }
   else if (false == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\!)|(?<=\,)|(?<=\.)/); }
   else if (true == question && true == exclamation && true == comma) { lines = text_box.value.split(/(?<=\?)|(?<=\,)|(?<=\!)|(?<=\.)/); }
-  else { lines = text_box.value.split(/(?<=\.)/); }
+  else { lines = text_box.value.split(/(?<=\.)/); 
+
+  for (let i = 0; i  <lines.length; i++) { lines[i] = lines[i].replace(/\n/g, ""); }
 
   let resultStr = "";
   if(true == enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
