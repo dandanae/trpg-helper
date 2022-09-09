@@ -51,8 +51,8 @@ function printResult()
   else { lines = text_box.value.split(/(?<=\.)/); }
 
   let resultStr = "";
-  if(true==enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc' + lines[i] + '\r' + '\r'; }}
-  else { for (let i = 0; i < lines.length; i++) { resultStr += '/desc' + lines[i] + '\r'; } }
+  if(true == enter) {for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r' + '\r'; }}
+  else { for (let i = 0; i < lines.length; i++) { resultStr += '/desc ' + lines[i] + '\r'; } }
   
   resultStr += "";
 
